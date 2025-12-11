@@ -14,16 +14,24 @@ function Preview({ personalInfo, education, experience }) {
 
             <section>
                 <h3>Education Information</h3>
-                <p><strong>School:</strong> {education.school}</p>
-                <p><strong>Degree:</strong> {education.degree}</p>
-                <p><strong>Duration:</strong> {education.startDate} - {education.endDate}</p>
+                {education.map((ed, index) => (
+                    <div key={index}>
+                        <p><strong>School:</strong>{ed.school}</p>
+                        <p><strong>Degree:</strong>{ed.degree}</p>
+                        <p><strong>Duration:</strong>{ed.startDate} - {ed.endDate}</p>
+                    </div>
+                ))}
             </section>
     
             <section>
                 <h3>Experience Information</h3>
-                <p><strong>Company:</strong> {experience.company}</p>
-                <p><strong>Position:</strong> {experience.position}</p>
-                <p><strong>Duration:</strong> {experience.startDate} - {experience.endDate}</p>
+                {experience.map((exp, index) => (
+                    <div key={index}>
+                        <p><strong>Company:</strong> {exp.company}</p>
+                        <p><strong>Position:</strong> {exp.position}</p>
+                        <p><strong>Duration:</strong> {exp.startDate} - {exp.endDate}</p>
+                    </div>
+                ))}
             </section>
         </div>
     );
